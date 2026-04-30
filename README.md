@@ -1,85 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App Documentation</title>
+# 🌤 Weather App (Spring Boot + Thymeleaf)
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+A simple and modern **Weather Web Application** built using **Spring Boot** and **Thymeleaf**.
+It fetches real-time weather data from the **OpenWeatherMap API** and displays it in a clean user interface.
 
-    <style>
-        body {
-            background: #0f172a;
-            color: #e2e8f0;
-            font-family: "Segoe UI", sans-serif;
-        }
-        .container {
-            max-width: 900px;
-        }
-        .card {
-            background: #1e293b;
-            border: none;
-            border-radius: 12px;
-        }
-        h1, h2, h3 {
-            color: #f8fafc;
-        }
-        code {
-            background: #334155;
-            padding: 2px 6px;
-            border-radius: 5px;
-            color: #facc15;
-        }
-        pre {
-            background: #020617;
-            padding: 15px;
-            border-radius: 10px;
-            color: #38bdf8;
-            overflow-x: auto;
-        }
-        hr {
-            border-color: #334155;
-        }
-    </style>
-</head>
+---
 
-<body>
+## 🚀 Features
 
-<div class="container py-5">
+* Search weather by city name
+* Displays temperature in Celsius
+* Shows current weather condition
+* Handles invalid input with error messages
+* Clean and responsive UI with Bootstrap
+* Secure API key handling using environment variables
 
-    <h1 class="mb-3">🌤 Weather App</h1>
-    <p>
-        A modern <strong>Weather Web Application</strong> built using <strong>Spring Boot</strong> and <strong>Thymeleaf</strong>.
-        It fetches real-time weather data from the OpenWeatherMap API and displays it in a clean UI.
-    </p>
+---
 
-    <hr>
+## 🛠 Tech Stack
 
-    <h2>🚀 Features</h2>
-    <ul>
-        <li>Search weather by city name</li>
-        <li>Displays temperature in Celsius</li>
-        <li>Shows current weather condition</li>
-        <li>Error handling for invalid input</li>
-        <li>Responsive UI with Bootstrap</li>
-        <li>Secure API key handling</li>
-    </ul>
+* **Backend:** Spring Boot (Java)
+* **Frontend:** Thymeleaf, HTML, CSS, Bootstrap
+* **API:** OpenWeatherMap
+* **Build Tool:** Maven
 
-    <hr>
+---
 
-    <h2>🛠 Tech Stack</h2>
-    <ul>
-        <li><strong>Backend:</strong> Spring Boot (Java)</li>
-        <li><strong>Frontend:</strong> Thymeleaf, HTML, CSS, Bootstrap</li>
-        <li><strong>API:</strong> OpenWeatherMap</li>
-        <li><strong>Build Tool:</strong> Maven</li>
-    </ul>
+## 📂 Project Structure
 
-    <hr>
-
-    <h2>📂 Project Structure</h2>
-    <pre>
+```id="ps0c2m"
 weatherApp/
 │
 ├── src/
@@ -99,52 +47,76 @@ weatherApp/
 │
 ├── pom.xml
 └── README.md
-    </pre>
+```
 
-    <hr>
+---
 
-    <h2>⚙️ Setup & Run</h2>
+## ⚙️ Setup & Run
 
-    <h5>1. Clone Repository</h5>
-    <pre>git clone https://github.com/your-username/weather-app.git
-cd weather-app</pre>
+### 1. Clone the repository
 
-    <h5>2. Get API Key</h5>
-    <p>Create an account on OpenWeatherMap and generate an API key.</p>
+```id="mptbb0"
+git clone https://github.com/your-username/weather-app.git
+cd weather-app
+```
 
-    <h5>3. Configure API Key</h5>
-    <pre>API_KEY=your_api_key_here</pre>
+---
 
-    <p>Example configuration:</p>
-    <pre>api.key=YOUR_API_KEY_HERE</pre>
+### 2. Get API Key
 
-    <h5>4. Run Application</h5>
-    <pre>mvn spring-boot:run</pre>
+* Create an account on OpenWeatherMap
+* Generate an API key
 
-    <h5>5. Access Application</h5>
-    <pre>http://localhost:8080/</pre>
+---
 
-    <hr>
+### 3. Configure API Key
 
-    <h2>⚠️ Error Handling</h2>
-    <ul>
-        <li>Handles invalid city names</li>
-        <li>Prevents application crash</li>
-        <li>Ensures smooth user experience</li>
-    </ul>
+Set environment variable:
 
-    <hr>
+```id="6m5n86"
+API_KEY=your_api_key_here
+```
 
-    <h2>🎯 Key Concepts Used</h2>
-    <ul>
-        <li>REST API Integration</li>
-        <li>MVC Architecture</li>
-        <li>Thymeleaf templating</li>
-        <li>Exception handling</li>
-        <li>Secure configuration</li>
-    </ul>
+Example configuration file:
 
-</div>
+```id="a8ewh4"
+application.properties.example
+```
 
-</body>
-</html>
+```id="0qew5o"
+api.key=YOUR_API_KEY_HERE
+```
+
+---
+
+### 4. Run Application
+
+```id="2i0hlx"
+mvn spring-boot:run
+```
+
+---
+
+### 5. Access Application
+
+```id="d7j1li"
+http://localhost:8080/
+```
+
+---
+
+## ⚠️ Error Handling
+
+* Displays message for invalid city names
+* Prevents application crash on API failure
+* Provides smooth user experience
+
+---
+
+## 🎯 Key Concepts Used
+
+* REST API Integration
+* MVC Architecture (Controller, Service, Model)
+* Thymeleaf templating
+* Exception handling
+* Secure configuration using environment variables
