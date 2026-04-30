@@ -10,7 +10,7 @@ import java.util.Map;
 @Service
 public class WeatherService {
 
-    private final String API_KEY = "98cc0dc8a26cb9692fdaa6959a7ac3fd";
+    private final String API_KEY = "#";
 
     public WeatherResponse getWeather(String cityName) {
 
