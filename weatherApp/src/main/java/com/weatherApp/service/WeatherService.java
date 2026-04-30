@@ -1,6 +1,7 @@
 package com.weatherApp.service;
 
 import com.weatherApp.model.WeatherResponse;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -10,13 +11,14 @@ import java.util.Map;
 @Service
 public class WeatherService {
 
-    private final String API_KEY = "#";
+    @Value("${api.key}")
+    private String apiKey;
 
     public WeatherResponse getWeather(String cityName) {
 
         try {
             String url = "https://api.openweathermap.org/data/2.5/weather?q="
-                    + cityName + "&appid=" + API_KEY + "&units=metric";
+                    + cityName + "&appid=" + apiKey + "&units=metric";
 
             RestTemplate restTemplate = new RestTemplate();
 
@@ -40,7 +42,9 @@ public class WeatherService {
             return new WeatherResponse(city, temp, condition);
 
         } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
             return null;
         }
+
     }
 }

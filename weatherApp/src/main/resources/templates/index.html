@@ -13,12 +13,18 @@
             color: white;
         }
 
-        .weather-card {
-            background: rgba(255, 255, 255, 0.1);
+        .card-custom {
+            background: rgba(255,255,255,0.1);
             backdrop-filter: blur(15px);
             border-radius: 20px;
             padding: 30px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            width: 350px;
+        }
+
+        .btn-custom {
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            border: none;
+            color: white;
         }
 
         .form-control {
@@ -30,24 +36,6 @@
         .form-control::placeholder {
             color: #ddd;
         }
-
-        .btn-custom {
-            background: linear-gradient(45deg, #ff7e5f, #feb47b);
-            border: none;
-            color: white;
-            font-weight: bold;
-        }
-
-        .btn-custom:hover {
-            opacity: 0.9;
-        }
-
-        .result-box {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 15px;
-            background: rgba(0,0,0,0.2);
-        }
     </style>
 </head>
 
@@ -55,19 +43,27 @@
 
 <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
 
-    <div class="weather-card text-center">
+    <div class="card-custom text-center">
 
-        <h2 class="mb-4">🌤 Weather App</h2>
+        <!-- ✅ TITLE -->
+        <h2 class="mb-3">🌤 Weather App</h2>
 
-        <!-- Form -->
+        <!-- ✅ DEFAULT TEXT (PREVENT BLANK PAGE) -->
+        <p>Enter a city to check weather 🌍</p>
+
+        <!-- ✅ FORM -->
         <form action="/weather" method="post">
             <input type="text" name="city" class="form-control mb-3" placeholder="Enter city" required>
-
             <button type="submit" class="btn btn-custom w-100">Search</button>
         </form>
 
-        <!-- Result -->
-        <div class="result-box" th:if="${weather != null}">
+        <!-- ❌ ERROR MESSAGE -->
+        <div class="alert alert-danger mt-3" th:if="${error}">
+            <span th:text="${error}"></span>
+        </div>
+
+        <!-- ✅ WEATHER RESULT -->
+        <div class="mt-4" th:if="${weather != null}">
             <h3 th:text="${weather.city}"></h3>
             <h4 th:text="${weather.temperature} + ' °C'"></h4>
             <p th:text="${weather.condition}"></p>
